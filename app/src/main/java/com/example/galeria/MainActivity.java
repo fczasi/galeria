@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+                simpleImageSwitcher.setInAnimation(MainActivity.this,R.anim.from_right);
+                simpleImageSwitcher.setOutAnimation(MainActivity.this,R.anim.to_left);
                 currentIndex++;
                 if (currentIndex == count)
                     currentIndex = 0;
@@ -74,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+                simpleImageSwitcher.setInAnimation(MainActivity.this,R.anim.from_left);
+                simpleImageSwitcher.setOutAnimation(MainActivity.this,R.anim.to_right);
                 currentIndex--;
                 if (currentIndex < 0)
                     currentIndex = count-1;
